@@ -27,7 +27,13 @@ default: &default
   port:     <%=ENV['OPENSHIFT_MYSQL_DB_PORT']%>
 
 development:
-  <<: *default
+  adapter: mysql2
+  database: pokelis_development
+  encoding: utf8
+  pool: 5
+  username: root
+  password:
+  host: localhost
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
