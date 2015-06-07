@@ -19,13 +19,12 @@ mysql: &mysql
   port:     <%=ENV['OPENSHIFT_MYSQL_DB_PORT']%>
 
 default: &default
-
-mysql: &mysql
   adapter: mysql2
   database: "<%=ENV['OPENSHIFT_APP_NAME']%>"
   username: "<%=ENV['OPENSHIFT_MYSQL_DB_USERNAME']%>"
   password: "<%=ENV['OPENSHIFT_MYSQL_DB_PASSWORD']%>"
   host:     <%=ENV['OPENSHIFT_MYSQL_DB_HOST']%>
+  port:     <%=ENV['OPENSHIFT_MYSQL_DB_PORT']%>
 
 development:
   <<: *default
