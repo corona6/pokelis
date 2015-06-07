@@ -1,5 +1,9 @@
 
+
 $(function() {
+
+  auto_link();
+
   $('#new_list').on('ajax:success', function(event, data, status, xhr) {
     var text = $("#list_data").val();
     var text2 = encodeURIComponent(text);
@@ -9,6 +13,7 @@ $(function() {
     var delBtn = $("<button>").attr("type", "button").attr("aria-label", "Close").attr("class", "close").prepend($("<span>").attr("aria-hidden", "true").text("×"))
     $("#list").prepend(well.prepend(text).prepend(newDeleteButton.prepend(delBtn)));
     $("#list_data").val('');
+    auto_link();
   }).on('ajax:error', function(event, xhr, status, error) {
     return alert(error);
   });
@@ -44,3 +49,9 @@ $(function() {
   });
 
 });
+
+function auto_link() {
+  $('.well').each(function(){
+    $(this).html( $(this).html().replace(/((http|https|ftp):\/\/[\w?=&.\/-;#~%-]+(?![\w\s?&.\/;#~%"=-]*>))/g, '<a href="$1" target="_blank">$1</a> ') );
+  });
+}
