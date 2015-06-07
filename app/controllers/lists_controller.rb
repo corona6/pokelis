@@ -6,7 +6,6 @@ class ListsController < ApplicationController
   # GET /lists
   # GET /lists.json
   def index
-    @lists = List.all
   end
 
   # GET /lists/1
@@ -93,7 +92,7 @@ class ListsController < ApplicationController
 
     # unknown id redirect to top page
     def unknown_id_check
-      return redirect_to :root if @list.nil?
+      return redirect_to :root, :alert => "リストがありません" if @list.nil?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
