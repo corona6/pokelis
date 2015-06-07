@@ -86,7 +86,7 @@ GEM
       mini_portile (~> 0.6.0)
     pretty_id (0.0.3)
       rails
-    rack (1.6.1)
+    rack (1.5.2)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.1)
