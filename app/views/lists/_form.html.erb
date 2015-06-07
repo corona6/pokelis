@@ -1,0 +1,7 @@
+<%= form_for @list, :url => {:action => :update}, remote: true, :html => { :class => "form-horizontal list", :id => "new_list" } do |f| %>
+
+<div class="well">
+  <%= f.text_field :data, :class => 'form-control', :value => '' %>
+</div>
+
+<% end %>
